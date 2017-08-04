@@ -77,6 +77,36 @@ class Config extends Component {
       this.props.onPrimaryNumberTextChange(this.props.prefix, this.props.primaryNumberText, event.target.value)
   }
 
+  //Label
+
+  onLabelToggle(){
+    if (this.props.labelOn){
+        this.props.onLabelChange(false, this.props.labelText)
+    }
+    else {
+        this.props.onLabelChange(true, this.props.labelText)
+    }
+  }
+
+  onLabelTextChange(event){
+    this.props.onLabelChange(this.props.labelOn, event.target.value)
+  }
+
+  //Comparison Label
+
+  onComparisonLabelToggle(){
+    if (this.props.comparisonLabelOn){
+        this.props.onComparisonLabelChange(false, this.props.comparisonLabelText)
+    }
+    else {
+        this.props.onComparisonLabelChange(true, this.props.comparisonLabelText)
+    }
+  }
+
+  onComparisonLabelTextChange(event){
+    this.props.onLabelChange(this.props.labelOn, event.target.value)
+  }
+
   onSecondaryVizChange(event){
       this.props.onSecondaryVizChange(event.target.value)
   }
@@ -104,6 +134,7 @@ class Config extends Component {
             value={this.props.titleText}
             onChange={this.onTitleTextChange.bind(this)}
         />
+
         <h3 className="f5 fw5 mt4">Primary Number</h3>
         <input 
             className="br2 pa2 w-20 bn bg-mid-gray white mr1"
@@ -123,6 +154,26 @@ class Config extends Component {
             value={this.props.suffix}
             onChange={this.onSuffixChange.bind(this)}
         />
+
+         <h3 className="f5 fw5 mt4">Label</h3>
+          <input
+          className="mb3 mr2"
+          type="checkbox" 
+          checked={this.props.labelOn} 
+          onChange = {this.onLabelToggle.bind(this)}
+          id="labelCheckbox" 
+          />
+          <label htmlFor="labelCheckbox">Show label for primary number</label>
+          <br />
+          <input 
+            className="br2 pa2 w-100 bn bg-mid-gray white"
+            type="text"
+            value={this.props.labelText}
+            onChange={this.onLabelTextChange.bind(this)}
+        />
+
+
+
         <h3 className="f5 fw5 mt4">Secondary Visualization</h3>
         <select 
             onChange={this.onSecondaryVizChange.bind(this)} 
@@ -134,6 +185,25 @@ class Config extends Component {
             <option value="sparkline">Sparkline</option>
             <option value="goal">Goal</option>
         </select>
+        {this.props.secondaryVizualisation === "comparisonNumber" && 
+        <div>
+          <input
+          className="mb3 mr2 mt3"
+          type="checkbox" 
+          checked={this.props.comparisonLabelOn} 
+          onChange = {this.onComparisonLabelToggle.bind(this)}
+          id="comparisonLabelCheckbox" 
+          />
+          <label htmlFor="comparisonLabelCheckbox">Show label for comparison number</label>
+          <br />
+          <input 
+            className="br2 pa2 w-100 bn bg-mid-gray white"
+            type="text"
+            value={this.props.comparisonLabelText}
+            onChange={this.onComparisonLabelTextChange.bind(this)}
+        />
+        </div>
+        }
         <h3 className="f5 fw5 mt4">Size</h3>
           <div className="cf">
               <div className="w-50 fl pr3">

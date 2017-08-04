@@ -15,7 +15,11 @@ class App extends Component {
       secondaryVizualisation: "none",
       primaryNumberText: "42",
       prefix: "",
-      suffix: ""
+      suffix: "",
+      labelOn: true,
+      labelText: "Bear attacks",
+      comparisonLabelOn: true,
+      comparisonLabelText: "Since yesterday",
     };
   }
 
@@ -56,6 +60,20 @@ class App extends Component {
      });
   }
 
+  onLabelChange(labelOn, labelText){
+    this.setState({ 
+        labelOn: labelOn,
+        labelText: labelText,
+     });
+  }
+
+  onComparisonLabelChange(comparisonLabelOn, comparisonLabelText){
+    this.setState({ 
+        comparisonLabelOn: comparisonLabelOn,
+        comparisonLabelText: comparisonLabelText,
+     });
+  }
+
   onSecondaryVizChange(secondaryVizualisation){
      this.setState({ 
         secondaryVizualisation: secondaryVizualisation
@@ -65,7 +83,7 @@ class App extends Component {
   render() {
 
     return (
-      <div className="App" className="cf">
+      <div className="cf">
         <Config
           widgetWidth = {this.state.widgetWidth}
           widgetHeight = {this.state.widgetHeight}
@@ -76,6 +94,12 @@ class App extends Component {
           primaryNumberText = {this.state.primaryNumberText}
           prefix = {this.state.prefix}
           suffix = {this.state.suffix}
+          labelOn = {this.state.labelOn}
+          labelText = {this.state.labelText}
+          comparisonLabelOn = {this.state.comparisonLabelOn}
+          comparisonLabelText = {this.state.comparisonLabelText}
+          onLabelChange = {this.onLabelChange.bind(this)}
+          onComparisonLabelChange = {this.onComparisonLabelChange.bind(this)}
           onPrimaryNumberTextChange = {this.onPrimaryNumberTextChange.bind(this)}
           secondaryVizualisation = {this.state.secondaryVizualisation}
           onSecondaryVizChange = {this.onSecondaryVizChange.bind(this)}
@@ -90,6 +114,10 @@ class App extends Component {
           secondaryVizualisation = {this.state.secondaryVizualisation}
           primaryNumberText = {this.state.primaryNumberText}
           primaryFontSize = {this.state.primaryFontSize}
+          labelOn = {this.state.labelOn}
+          labelText = {this.state.labelText}
+          comparisonLabelOn = {this.state.comparisonLabelOn}
+          comparisonLabelText = {this.state.comparisonLabelText}
           aspectRatio = {this.state.widgetWidth / this.state.widgetHeight}
           prefix = {this.state.prefix}
           suffix = {this.state.suffix}
