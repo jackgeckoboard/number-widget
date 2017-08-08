@@ -24,6 +24,16 @@ class ComparisonNumber extends Component {
         color: "#90c564",
         }
 
+    //If floated on the right, make the secondary label the same size as the main label
+    if (this.props.bigLabel){
+        comparisonLabelStyle = {
+        fontSize: this.props.primaryFontSize * 0.333,
+        color: "rgba(255,255,255,0.86)",
+        lineHeight: 1.5,
+        display: "block"
+     }
+    }
+
 
     return (
 

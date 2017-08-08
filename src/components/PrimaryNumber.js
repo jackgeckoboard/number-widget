@@ -14,13 +14,14 @@ class PrimaryNumber extends Component {
 
     let labelStyle = {
             fontSize: this.props.primaryFontSize * 0.333,
-            display: "block"        
+            display: "block",
+            
      }
 
 
       let   primaryNumberStyle = {
         fontSize: this.props.primaryFontSize * this.props.transformSize,
-        opacity: 0.86,
+        color: "rgba(255,255,255,0.86)",  
         alignContent: "baseline"
         }
     
@@ -28,7 +29,8 @@ class PrimaryNumber extends Component {
         labelStyle = {
         fontSize: this.props.primaryFontSize * 0.4,
         marginLeft: "1em",
-        lineHeight: 1.1           
+        lineHeight: 1.1,
+        color: "rgba(255,255,255,0.86)",           
      }
     }
 

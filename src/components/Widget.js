@@ -322,6 +322,7 @@ class Widget extends Component {
                             primaryFontSize = {this.calculatePrimaryFontSize()}
                             comparisonLabelShown = {this.comparisonLabelShown()}
                             comparisonLabelText = {this.props.comparisonLabelText}
+                            bigLabel = {this.calculateLayout() === "leftRight"}
                         />
                     </div>
                 }
