@@ -111,6 +111,20 @@ class Config extends Component {
       this.props.onSecondaryVizChange(event.target.value)
   }
 
+  //Transform sizes
+
+  onSetTransformSize100(){
+    this.props.onTransformSizeChange(1);
+  }
+
+   onSetTransformSize80(){
+    this.props.onTransformSizeChange(0.8);
+  }
+
+    onSetTransformSize60(){
+    this.props.onTransformSizeChange(0.6);
+  }
+
   render() {
 
     return (
@@ -266,6 +280,23 @@ class Config extends Component {
             className="mr2 pv2 ph3 br2 mb2 bn bg-moon-gray pointer bg-animate hover-bg-light-gray"
             onClick={this.onSetSize3x3.bind(this)}>
             3 x 3
+          </button>
+
+          <p className="f6 db mb2 mt4 ">Scale font sizes</p>
+          <button 
+            className="mr2 pv2 ph3 br2 mb2 bn bg-moon-gray pointer bg-animate hover-bg-light-gray" 
+            onClick={this.onSetTransformSize100.bind(this)}>
+            100%
+          </button>
+          <button 
+            className="mr2 pv2 ph3 br2 mb2 bn bg-moon-gray pointer bg-animate hover-bg-light-gray"
+            onClick={this.onSetTransformSize80.bind(this)}>
+            80%
+          </button>
+          <button 
+            className="mr2 pv2 ph3 br2 mb2 bn bg-moon-gray pointer bg-animate hover-bg-light-gray"
+            onClick={this.onSetTransformSize60.bind(this)}>
+            60%
           </button>
           
         </div>

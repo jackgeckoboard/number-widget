@@ -9,7 +9,6 @@ class App extends Component {
     this.state = {
       widgetHeight: 230,
       widgetWidth: 230,
-      primaryFontSize: 60,
       titleOn: true,
       titleText: "This is the title",
       secondaryVizualisation: "none",
@@ -20,29 +19,16 @@ class App extends Component {
       labelText: "Bear attacks",
       comparisonLabelOn: true,
       comparisonLabelText: "Since yesterday",
+      transformSize: 1
     };
   }
 
-
-  calculateFontSize(height) {
-     // Update primary font size
-      if (height >= 710){
-        this.setState({primaryFontSize: 200});
-      }
-     else if (height >= 470){
-       this.setState({primaryFontSize: 108});
-     }
-     else {
-      this.setState({primaryFontSize: 60});
-     }
-  }
 
   onChangeSize(width, height) {
     this.setState({ 
         widgetWidth: width,
         widgetHeight: height,
      });
-    this.calculateFontSize(height);
   }
 
   onTitleChange(titleOn, titleText){
@@ -80,6 +66,12 @@ class App extends Component {
      });
   }
 
+  onTransformSizeChange(transformSize){
+    this.setState({
+      transformSize: transformSize
+    })
+  }
+
   render() {
 
     return (
@@ -103,6 +95,7 @@ class App extends Component {
           onPrimaryNumberTextChange = {this.onPrimaryNumberTextChange.bind(this)}
           secondaryVizualisation = {this.state.secondaryVizualisation}
           onSecondaryVizChange = {this.onSecondaryVizChange.bind(this)}
+          onTransformSizeChange = {this.onTransformSizeChange.bind(this)}
           className="w-30 fl"
           
           />
@@ -113,7 +106,6 @@ class App extends Component {
           widgetHeight = {this.state.widgetHeight}
           secondaryVizualisation = {this.state.secondaryVizualisation}
           primaryNumberText = {this.state.primaryNumberText}
-          primaryFontSize = {this.state.primaryFontSize}
           labelOn = {this.state.labelOn}
           labelText = {this.state.labelText}
           comparisonLabelOn = {this.state.comparisonLabelOn}
@@ -121,6 +113,7 @@ class App extends Component {
           aspectRatio = {this.state.widgetWidth / this.state.widgetHeight}
           prefix = {this.state.prefix}
           suffix = {this.state.suffix}
+          transformSize = {this.state.transformSize}
 
           className="w-70 fl"
         />  
