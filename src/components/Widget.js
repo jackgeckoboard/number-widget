@@ -43,7 +43,7 @@ class Widget extends Component {
 
     calculatePrimaryFontSize() {
         let baseFontSize = 60;
-        let multiplier = this.props.transformSize;
+        let multiplier = 1;
         
         if (this.props.widgetHeight >= 710){
             baseFontSize = 200;
@@ -310,6 +310,7 @@ class Widget extends Component {
                     prefix = {this.props.prefix}
                     suffix = {this.props.suffix}
                     primaryFontSize = {this.calculatePrimaryFontSize()}
+                    transformSize = {this.props.transformSize}
                     labelShown = {this.isLabelShown()}
                     labelLayout = {this.calculateLabelLayout()}
                     labelText = {this.props.labelText}

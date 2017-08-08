@@ -19,7 +19,7 @@ class PrimaryNumber extends Component {
 
 
       let   primaryNumberStyle = {
-        fontSize: this.props.primaryFontSize,
+        fontSize: this.props.primaryFontSize * this.props.transformSize,
         opacity: 0.86,
         alignContent: "baseline"
         }
