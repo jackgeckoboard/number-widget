@@ -229,15 +229,14 @@ class Widget extends Component {
         width: "100%"
       }
       primaryNumberContainerStyle = {
-        width: "50%",
+        width: this.props.widgetHeight,
       }
 
       secondaryVizualisationContainerStyle ={
         fontSize: this.props.primaryFontSize * 0.8,
         color: "#90c564",
-        width: "50%",
         height: "100%",
-        marginLeft: 14,
+
     
       }
       
@@ -263,12 +262,12 @@ class Widget extends Component {
         width: "100%"
       }
       primaryNumberContainerStyle = {
-        width: "50%",
+        width: this.props.widgetHeight,
       }
 
       sparklineContainerStyle ={
-        width: "50%",
         marginLeft: 14,
+        width: this.props.widgetWidth - this.props.widgetHeight
       }
       
     }
