@@ -21,7 +21,10 @@ function TypeSize(n) {
     253,
     291
   ];
-
-  return typeScale[n];
+  if (n < 0) {
+    return typeScale[0];
+  } else {
+    return typeScale[n];
+  }
 }
 export { TypeSize };

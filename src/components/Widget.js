@@ -207,6 +207,40 @@ class Widget extends Component {
 
     if (
       this.calculateLayout() === "leftRight" &&
+      this.props.secondaryVizualisation === "comparisonNumber" &&
+      this.isLabelShown() === false &&
+      this.comparisonLabelShown() === true
+    ) {
+      widgetInnerStyle = {
+        position: "absolute",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        display: "flex",
+        alignItems: "center"
+      };
+
+      widgetBodyStyle = {
+        position: "absolute",
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "flex-start",
+        padding: "0 14px",
+        width: "100%"
+      };
+      primaryNumberContainerStyle = {
+        width: this.props.widgetHeight
+      };
+
+      secondaryVizualisationContainerStyle = {
+        fontSize: this.props.primaryFontSize * 0.8,
+        color: "#90c564",
+        height: "100%"
+      };
+    } else if (
+      this.calculateLayout() === "leftRight" &&
       this.props.secondaryVizualisation === "comparisonNumber"
     ) {
       widgetInnerStyle = {
@@ -317,6 +351,7 @@ class Widget extends Component {
                 <div style={secondaryVizualisationContainerStyle}>
                   <ComparisonNumber
                     primaryFontSize={this.calculatePrimaryFontSize()}
+                    primaryFontRef={this.calculatePrimaryFontRef()}
                     comparisonLabelShown={this.comparisonLabelShown()}
                     comparisonLabelText={this.props.comparisonLabelText}
                     bigLabel={this.calculateLayout() === "leftRight"}
@@ -330,7 +365,10 @@ class Widget extends Component {
 
               {this.props.secondaryVizualisation === "goal" &&
                 <div style={secondaryVizualisationContainerStyle}>
-                  <Goal primaryFontSize={this.calculatePrimaryFontSize()} />
+                  <Goal
+                    primaryFontSize={this.calculatePrimaryFontSize()}
+                    primaryFontRef={this.calculatePrimaryFontRef()}
+                  />
                 </div>}
             </div>
           </div>

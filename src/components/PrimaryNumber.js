@@ -7,11 +7,13 @@ class PrimaryNumber extends Component {
     //These styles will apply all the time
 
     let prefixsuffixStyle = {
-      fontSize: "0.6em"
+      //fontSize: "0.6em"
+      fontSize: TypeSize(this.props.primaryFontRef - 4)
     };
 
     let labelStyle = {
-      fontSize: this.props.primaryFontSize * 0.333,
+      //fontSize: this.props.primaryFontSize * 0.333,
+      fontSize: TypeSize(this.props.primaryFontRef - 8),
       display: "block"
     };
 
@@ -23,7 +25,8 @@ class PrimaryNumber extends Component {
 
     if (this.props.labelLayout === "floated") {
       labelStyle = {
-        fontSize: this.props.primaryFontSize * 0.4,
+        //fontSize: this.props.primaryFontSize * 0.4,
+        fontSize: TypeSize(this.props.primaryFontRef - 7),
         marginLeft: "1em",
         lineHeight: 1.1,
         color: "rgba(255,255,255,0.86)"
