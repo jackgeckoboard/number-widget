@@ -16,7 +16,7 @@ class Title extends Component {
 
     let titleStyle = {
       //fontSize: 21,
-      fontSize: TypeSize(1),
+      fontSize: TypeSize(4),
       opacity: 0.86,
       lineHeight: 1.25
     };

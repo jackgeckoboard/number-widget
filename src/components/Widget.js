@@ -38,13 +38,13 @@ class Widget extends Component {
   }
 
   calculatePrimaryFontRef() {
-    let baseFontSize = 9;
+    let baseFontSize = 12;
     let stepper = 0;
 
     if (this.props.widgetHeight >= 710) {
-      baseFontSize = 17;
+      baseFontSize = 20;
     } else if (this.props.widgetHeight >= 470) {
-      baseFontSize = 13;
+      baseFontSize = 16;
     }
 
     // make bigger if there is no secondary viz or we're in landscape mode
@@ -344,6 +344,7 @@ class Widget extends Component {
                   labelShown={this.isLabelShown()}
                   labelLayout={this.calculateLabelLayout()}
                   labelText={this.props.labelText}
+                  widgetHeight={this.props.widgetHeight}
                 />
               </div>
 

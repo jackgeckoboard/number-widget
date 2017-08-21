@@ -1,30 +1,9 @@
 function TypeSize(n) {
-  let typeScale = [
-    18,
-    21,
-    24,
-    28,
-    32,
-    36,
-    42,
-    48,
-    55,
-    63,
-    73,
-    84,
-    96,
-    110,
-    127,
-    146,
-    167,
-    192,
-    253,
-    291
-  ];
-  if (n < 0) {
-    return typeScale[0];
+  const baseFontSize = 12;
+  if (n < 3) {
+    return 18;
   } else {
-    return typeScale[n];
+    return Math.round(baseFontSize * Math.pow(2, n / 5));
   }
 }
 export { TypeSize };
